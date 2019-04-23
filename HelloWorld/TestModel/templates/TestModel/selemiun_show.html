@@ -1,0 +1,31 @@
+{% extends 'TestModel/base.html' %}
+{% load staticfiles %}
+{% block title %}博客首页{% endblock %}
+
+{% block css %}<link href="{% static 'TestModel/css/index.css' %}" rel="stylesheet">{% endblock %}
+{% block content %}
+<h2>京东手机商品信息</h2>
+<div class="row">
+        {% for line in phone_list %}
+        <div class="col-sm-6 col-md-3">
+             <div class="thumbnail">
+                <a target="_blank" title="asdfa" href="http://www.baidu.com">
+                <img src="{{line.img_url}}" 
+                 alt="通用的占位符缩略图"></a>
+                <div class="caption">
+                    <h3 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;"><a href="{{line.link}}">￥{{line.price}}</a></h3>
+                    <p>{{line.name}}</p>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">
+                            按钮
+                        </a> 
+                        <a href="#" class="btn btn-default" role="button">
+                            按钮
+                        </a>
+                    </p>
+                </div>
+             </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

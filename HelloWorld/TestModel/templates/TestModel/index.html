@@ -1,0 +1,9 @@
+{% extends 'TestModel/base.html' %}
+
+{% block title %}博客首页{% endblock %}
+
+{% block content %}
+    <a style="font-size:25px" href="{%url 'TestModel:movie_show' %}"><span style="color: #5e5554">爬取豆瓣top50电影</span></a><br/>
+    <a style="font-size: 25px" href="{%url 'TestModel:phone_show' %}"><span style="color: #5e5554">selemiun动态爬取</span></a>
+    <div style="height: 440px; " ></div>
+{% endblock %}

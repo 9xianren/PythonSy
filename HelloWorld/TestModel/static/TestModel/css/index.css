@@ -1,0 +1,10 @@
+body{
+    margin: 10 10 20 20
+}
+.caption p{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+}
