@@ -3,7 +3,31 @@
 {% block title %}博客首页{% endblock %}
 
 {% block content %}
-    <a style="font-size:25px" href="{%url 'TestModel:movie_show' %}"><span style="color: #5e5554">爬取豆瓣top50电影</span></a><br/>
+    <!--<a style="font-size:25px" href="{%url 'TestModel:movie_show' %}"><span style="color: #5e5554">爬取豆瓣top50电影</span></a><br/>
     <a style="font-size: 25px" href="{%url 'TestModel:phone_show' %}"><span style="color: #5e5554">selemiun动态爬取</span></a>
-    <div style="height: 440px; " ></div>
+    <div style="height: 100px; " ></div>-->
+    {% for line in show %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h1>Python简介</h1>
+                <p>
+                    <strong>Angle_xian</strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{line.created_time|date:'Y年m月d日' }}
+                    &nbsp;&nbsp;&nbsp;&nbsp;分类：
+                        &nbsp;&nbsp;<a href="#">python基础</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;标签：
+                        &nbsp;&nbsp;<a href="#">python</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;浏览量：
+                            &nbsp;&nbsp;1
+                        <img src="/static/python.jpg" width="60%" height="270px"/>
+                    <hr />
+                    <p>
+                        {{ line.body }}
+                    </p>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}

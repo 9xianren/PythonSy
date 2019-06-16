@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from . import models
+from django.http import HttpResponse
 
 def index(request):
-    return render(request,'TestModel/index.html',locals())
+    show=models.Entry.objects.all()
+    return render(request,'TestModel/index.html',{"show":show})
 
 
 def detail(request,blog_id):
@@ -16,3 +18,4 @@ def lists(request):
 def phone_msg(request):
     phone_list=models.phone.objects.all()
     return render(request,'TestModel/selemiun_show.html',{"phone_list":phone_list})
+

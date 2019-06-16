@@ -1,6 +1,6 @@
 from django.shortcuts import render
- 
-def hello(request):
-    context          = {}
-    context['hello'] = 'Hello World!'
-    return render(request, 'hello.html', context)
+from TestModel import models
+  
+def login(request):
+    adminlist=models.admin.opject.all()
+    return render(request,'TestModel/login.html',{"adminlist":adminlist})

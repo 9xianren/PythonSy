@@ -11,7 +11,7 @@
     {% block css %}{% endblock %}
 
 </head>
-<body>
+<body style="background-color:lightgreen">
 
 <nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
@@ -30,8 +30,8 @@
     <div class="collapse navbar-collapse" id="my-nav">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/blog/">博客</a></li>
-        <li ><a href="#">学习资源</a></li>
-        <li ><a href="#">联系我</a></li>
+        <li ><a href="{%url 'TestModel:movie_show' %}">豆瓣top电影</a></li>
+        <li ><a href="{%url 'TestModel:phone_show' %}">京东手机信息</a></li>
       </ul>
 
       <form class="navbar-form navbar-left">
@@ -42,7 +42,7 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">登录</a></li>
+        <li class="navbar-brand">欢迎你 {{request.session.username}}</li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
@@ -72,7 +72,7 @@
 
 <script src="{% static 'jquery-3.2.1.min.js' %}"></script>
 <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
-
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 {% block script %}{% endblock %}
 
 </body>

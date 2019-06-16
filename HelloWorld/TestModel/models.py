@@ -12,6 +12,7 @@ class Test(models.Model):
         verbose_name='博客分类'
         verbose_name_plural=verbose_name
 
+
 class Tag(models.Model):
     name=models.CharField('标签',max_length=128)
 
@@ -48,3 +49,7 @@ class phone(models.Model):
     price=models.CharField(max_length=128)
     name=models.CharField(max_length=128)
     comment=models.CharField(max_length=128)
+
+class admin(models.Model):
+    adminkey=models.CharField(max_length=20)
+    adminpwd=models.CharField(max_length=20)
